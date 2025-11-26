@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🚀 Job Tracker Dashboard
 
-## Getting Started
+### Modern Application Built with Next.js and Tailwind CSS
 
-First, run the development server:
+This is a personal job application tracking tool designed to demonstrate core front-end development, component-based architecture, and full-stack deployment capabilities.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🔗 Live Application & Code
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+| Deployment Type | Link |
+| :--- | :--- |
+| **Live Demo URL (Vercel)** | [PASTE YOUR VERCEL URL HERE] (e.g., `job-tracker-nextjs.vercel.app`) |
+| **GitHub Repository** | [Link to this repository] |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## ✨ Key Features & Technical Skills Demonstrated
 
-To learn more about Next.js, take a look at the following resources:
+This project showcases the ability to build, manage, and deploy a professional-grade single-page application.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+* **Next.js (App Router):** The application is structured using Next.js for routing and superior performance, ensuring fast load times and an excellent developer experience.
+* **Tailwind CSS Mastery:** The entire UI is built using the Tailwind CSS utility framework, demonstrating proficiency in rapid styling, responsive design, and professional UI/UX best practices (clean forms, table styling, and clear visual hierarchy).
+* **Full Responsiveness:** The dashboard implements a mobile-first design:
+    * **Desktop:** Uses a **1/3 Grid Layout** (Form in sidebar, Table in main content).
+    * **Mobile:** The Form and Table stack vertically for usability on smaller screens.
+* **Component Architecture (React):** Uses reusable React components (`JobForm`, `JobTable`) with clear data flow, proving competence in managing state and application structure.
+* **Dynamic Data Handling:** Uses React hooks (`useState`) to manage the list of applications, including:
+    * Form input and submission handling.
+    * Real-time data filtering by **Application Status**.
+    * Conditional styling (color-coded status badges).
+* **Professional Deployment:** Deployed via **Vercel**, proving the ability to handle modern CI/CD pipelines and production hosting.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🛠️ Tech Stack
 
-## Deploy on Vercel
+* **Framework:** Next.js
+* **Styling:** Tailwind CSS
+* **Language:** JavaScript (JSX)
+* **State Management:** React Hooks (`useState`)
+* **Deployment:** Vercel (Automatic Deployment via GitHub)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🛠️ How to Run Locally
+
+1.  **Clone the repository:** `git clone [repository URL]`
+2.  **Install dependencies:** `npm install`
+3.  **Run development server:** `npm run dev`
+4.  Open your browser to `http://localhost:3000`.

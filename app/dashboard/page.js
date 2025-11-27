@@ -5,7 +5,7 @@
 import React, { useState, useEffect } from 'react';
 import { collection, getDocs, addDoc, updateDoc, deleteDoc, doc, query, where } from 'firebase/firestore';
 import { onAuthStateChanged } from 'firebase/auth';
-import { db, auth } from '../lib/firebase'; // Ensure correct path to your firebase config
+import { db, auth } from '../../lib/firebase'; // Ensure correct path to your firebase config
 import JobForm from '../components/JobForm';
 import JobTable from '../components/JobTable';
 import AuthComponent from '../components/AuthComponent'; // Used if auth state is lost

@@ -1,7 +1,7 @@
-// app/layout.js (UPDATED: Contains the Header and Footer only once)
+// app/layout.js (The correct structure)
 import './globals.css';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Header from '../components/Header'; // <-- MUST BE PRESENT
+import Footer from '../components/Footer'; // <-- MUST BE PRESENT
 
 export const metadata = {
   title: 'Job Tracker | Professional Dashboard',
@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="flex flex-col min-h-screen">
-        <Header /> {/* RENDERED ONCE GLOBALLY */}
+        <Header /> {/* This line now references the import */}
         <main className="flex-grow">
           {children} 
         </main>

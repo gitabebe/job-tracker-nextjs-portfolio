@@ -1,14 +1,15 @@
 // app/dashboard/page.js
 
-"use client"; // <-- ESSENTIAL CLIENT DIRECTIVE
+"use client"; // <-- ESSENTIAL CLIENT DIRECTIVE for using React Hooks
 
 import React, { useState, useEffect } from 'react';
+// Corrected import path for Next.js folder structure:
 import { collection, getDocs, addDoc, updateDoc, deleteDoc, doc, query, where } from 'firebase/firestore';
 import { onAuthStateChanged } from 'firebase/auth';
-import { db, auth } from '../../lib/firebase'; // Ensure correct path to your firebase config
-import JobForm from '../components/JobForm';
-import JobTable from '../components/JobTable';
-import AuthComponent from '../components/AuthComponent'; // Used if auth state is lost
+import { db, auth } from '../../lib/firebase'; // <--- CORRECTED PATH: MOVES UP TWO LEVELS
+import JobForm from '../../components/JobForm';
+import JobTable from '../../components/JobTable';
+import AuthComponent from '../../components/AuthComponent'; 
 
 export default function Dashboard() {
     const [jobs, setJobs] = useState([]);
@@ -50,11 +51,11 @@ export default function Dashboard() {
 
     // --- 3. CREATE (Add Job to Firestore) ---
     const handleAddJob = async (newJob) => {
-        if (!user) return; // Should not happen, but safe practice
+        if (!user) return; 
         try {
             const docRef = await addDoc(collection(db, 'jobs'), {
                 ...newJob,
-                userId: user.uid, // Crucial for security rules
+                userId: user.uid, 
                 createdAt: new Date(),
             });
             // Update local state to reflect the new job with its Firestore ID
@@ -103,27 +104,29 @@ export default function Dashboard() {
     if (loading) return <div className="text-center py-20 text-xl">Loading Dashboard...</div>;
 
     if (!user) {
-        // If the user somehow lands here while logged out, redirect them to AuthComponent
+        // If the user lands here while logged out, show the login screen
         return <AuthComponent />;
     }
 
     // --- MAIN DASHBOARD UI (If Authenticated) ---
     return (
         <div className="py-10">
+            {/* Note: The Header is NOT included here, as it lives in app/layout.js */}
+            
             <header className="text-center mb-10">
                 <h1 className="text-4xl font-extrabold text-indigo-700">Application Dashboard</h1>
                 <p className="text-gray-500 mt-2">Built with Next.js and Tailwind CSS</p>
             </header>
             
-            {/* Responsive Layout Grid: 1 column on mobile, 4 columns on desktop */}
+            {/* Responsive Layout Grid */}
             <section className="container mx-auto px-4 md:grid md:grid-cols-4 gap-8">
                 
-                {/* Sidebar (Job Form) - Takes 1 column on desktop */}
+                {/* Sidebar (Job Form) */}
                 <div className="md:col-span-1 mb-8 md:mb-0">
                     <JobForm onAddJob={handleAddJob} />
                 </div>
 
-                {/* Main Content (Job Table) - Takes 3 columns on desktop */}
+                {/* Main Content (Job Table) */}
                 <div className="md:col-span-3">
                     <JobTable 
                         jobs={filteredJobs} 
